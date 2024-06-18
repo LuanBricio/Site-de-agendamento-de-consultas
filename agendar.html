@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Consultas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('hugo.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 400px;
+            height: auto;
+            background-color: white;
+            border-radius: 0% 10% 10% 0%;
+            display: flex;
+            flex-direction: column;
+            padding: 2em;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo {
+            width: 60%;
+            margin-bottom: 1em;
+            align-self: center;
+            margin-top: 2em;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .inputEstilizado {
+            margin: 10px 0;
+            width: 100%;
+            height: 50px;
+            border-style: none;
+            border-radius: 1vh;
+            font-size: medium;
+            box-shadow: 0px 0px 10px black;
+            padding: 0 1em;
+            box-sizing: border-box;
+        }
+        
+        button {
+            margin: 10px 0;
+            width: 100%;
+            height: 50px;
+            border-style: none;
+            border-radius: 10vh;
+            background-color: rgb(55, 36, 226);
+            color: rgb(255, 255, 255);
+            font-size: large;
+            box-shadow: 0px 0px 10px black;
+        }
+        
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 10px 20px;
+            background: rgb(55, 36, 226);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10vh;
+            font-size: 30px;
+            margin-top: 30px;
+            width: 100%;
+            height: 50px;
+        }
+        
+        .divider {
+            background-color: #0072C6;
+            height: 5px;
+            margin: 20px 0;
+            width: 100%;
+        }
+        
+        .horarios {
+            width: 100%;
+        }
+        
+        div {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="logo_fundo transparente.png" alt="logo" class="logo">
+        <h2>Agendamento de Consultas</h2>
+        <form id="appointment-form">
+            <input type="text" class="inputEstilizado" id="name" name="name" placeholder="Nome completo do paciente" required>
+            <input type="date" class="inputEstilizado" id="birthdate" name="birthdate" placeholder="Data de nascimento" required>
+            <input type="text" class="inputEstilizado" id="responsavel" name="responsavel" placeholder="Nome do responsável" required>
+            <input type="tel" class="inputEstilizado" id="phone" name="phone" placeholder="Telefone" required>
+            <select class="inputEstilizado" id="already-attended" name="already-attended" required>
+                <option value="">O paciente já é acompanhado?</option>
+                <option value="primeira-vez">Primeira vez</option>
+                <option value="ja-acompanhado">Já é acompanhado</option>
+            </select>
+            <div class="divider"></div>
+            <div class="horarios">
+                <h2>Selecione a Data e Hora da Consulta</h2>
+                <input type="datetime-local" class="inputEstilizado" id="datahora" name="datahora" required>
+                <button type="button" class="btn" onclick="validateAndRedirect()">Agendar consulta</button>
+            </div>
+        </form>
+    </div>
+    <script src="validate.js"></script>
+</body>
+
+</html>
