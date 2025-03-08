@@ -1,0 +1,8 @@
+{
+    "diasPermitidos": [2, 3], 
+    "horariosPermitidos": [
+      { "inicio": "06:00", "fim": "11:00" },
+      { "inicio": "14:00", "fim": "16:00" }
+    ]
+}
+  

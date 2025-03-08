@@ -5,28 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento de Consultas</title>
+    <link rel="stylesheet" href="agendar.css">
 </head>
 
 <body>
-    <div class="container">
-        <form id="appointment-form">
+
+    <section>
+        <form class="container">
+            Nome do paciente:
             <input type="text" class="inputEstilizado" id="name" name="name" placeholder="Nome completo do paciente" required>
+            Data de nascimento do paciente:
             <input type="date" class="inputEstilizado" id="birthdate" name="birthdate" placeholder="Data de nascimento" required>
+            Nome do responsável:
             <input type="text" class="inputEstilizado" id="responsavel" name="responsavel" placeholder="Nome do responsável" required>
+            Telefone do responsável:
             <input type="tel" class="inputEstilizado" id="phone" name="phone" placeholder="Telefone" required>
+            O paciente já é acompanhado?:
             <select class="inputEstilizado" id="already-attended" name="already-attended" required>
                 <option value="">O paciente já é acompanhado?</option>
                 <option value="primeira-vez">Primeira vez</option>
                 <option value="ja-acompanhado">Já é acompanhado</option>
             </select>
-            <div class="divider"></div>
-            <div class="horarios">
-                <h2>Selecione a Data e Hora da Consulta</h2>
-                <input type="datetime-local" class="inputEstilizado" id="datahora" name="datahora" required>
-                <button">Agendar consulta</button>
-            </div>
         </form>
-    </div>
+        <h3>Horários</h3>
+        <form class="horarios">
+            Selecione a Data e Hora da Consulta:
+            <input type="datetime-local" class="inputEstilizado" id="datahora" name="datahora" required>
+            <button type="button" id="botaoAgendar">Agendar Consulta</button>
+        </form>
+        </section>
+
+        <div id="mensagemErro" class="mensagem-erro"></div>
+
+        <script src="agendar.js"></script>
+
 </body>
 
 </html>
